@@ -1,0 +1,10 @@
+<div id="<%= dom_id grid %>">
+  <p>
+    <strong>Payload:</strong>
+    <%= grid.payload %>
+  </p>
+  <%= content_tag(:canvas, "", data: {
+    controller: "grid",
+    grid_payload: grid.payload,
+  }) %>
+</div>

@@ -1,0 +1,19 @@
+<%= form_with(model: grid) do |form| %>
+  <% if grid.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(grid.errors.count, "error") %> prohibited this grid from being saved:</h2>
+      <ul>
+        <% grid.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :payload, style: "display: block" %>
+    <%= form.text_area :payload, value: grid.payload.to_json %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

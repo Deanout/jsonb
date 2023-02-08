@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+<h1>Grids</h1>
+<div class="jsonb-nodes">
+  <h3>Grids with [2, 2] start nodes</h3>
+  <% @start_nodes.each do |grid| %>
+    <p><%= link_to "Show grid", grid %></p>
+  <% end %>
+</div>
+<div id="grids">
+  <% @grids.each do |grid| %>
+    <%= render grid %>
+    <p>
+      <%= link_to "Show this grid", grid %>
+    </p>
+  <% end %>
+</div>
+<%= link_to "New grid", new_grid_path %>
